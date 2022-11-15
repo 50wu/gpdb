@@ -293,8 +293,8 @@ def main():
         '--os_types',
         action='store',
         dest='os_types',
-        default=['rhel8'],
-        choices=['rhel8', 'win'],
+        default=['oel8'],
+        choices=['oel8', 'win'],
         nargs='+',
         help='List of OS values to support'
     )
@@ -407,7 +407,7 @@ def main():
         args.use_ICW_workers = True
 
     if args.pipeline_configuration == 'prod' or args.pipeline_configuration == 'full' or args.directed_release:
-        args.os_types = ['rhel8', 'win']
+        args.os_types = ['oel8', 'win']
         args.test_sections = [
             'ICW',
             'Replication',
